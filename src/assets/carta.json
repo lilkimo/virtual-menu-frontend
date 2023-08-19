@@ -1,0 +1,282 @@
+{
+  "restaurants": [
+    {
+      "name": "Fukusuke",
+      "menu": [
+        {
+          "name": "Yakitori",
+          "description": "3 brochetas de pollo con salsa teriyaki.",
+          "price": 5000,
+          "picture": "./Yakitori.png",
+          "categories": [
+            "entrada",
+            "plato caliente"
+          ],
+          "ingredients": [
+            "pollo",
+            "salsa teriyaki",
+            "sésamo"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Gyozas Tori",
+          "description": "7 empanadas japonesas rellenas de verduras y pollo cocinadas al vapor.",
+          "price": 5000,
+          "picture": "./Gyozas.png",
+          "categories": [
+            "entrada",
+            "plato caliente"
+          ],
+          "ingredients": [
+            "pollo",
+            "verduras"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Gyozas Ebi",
+          "description": "7 empanadas japonesas rellenas de verduras y camarón cocinadas al vapor.",
+          "price": 5000,
+          "picture": "./Gyozas.png",
+          "categories": [
+            "entrada",
+            "plato caliente"
+          ],
+          "ingredients": [
+            "camarón",
+            "verduras"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Gyozas Yasai",
+          "description": "7 empanadas japonesas rellenas de verduras cocinadas al vapor.",
+          "price": 5000,
+          "picture": "./Gyozas.png",
+          "categories": [
+            "entrada",
+            "plato caliente"
+          ],
+          "ingredients": [
+            "verduras"
+          ],
+          "tags": [
+            "vegano",
+            "vegetariano"
+          ]
+        },
+        {
+          "name": "Nigiri Ebi",
+          "description": "3 bolitas de arroz cubiertas de camarón.",
+          "price": 3000,
+          "picture": "./Nigiri Ebi.png",
+          "categories": [
+            "entrada",
+            "plato frío"
+          ],
+          "ingredients": [
+            "camarón",
+            "arroz"
+          ],
+          "tags": [
+            "camarón",
+            "sin gluten"
+          ]
+        },
+        {
+          "name": "Nigiri Sake",
+          "description": "3 bolitas de arroz cubiertas de salmón.",
+          "price": 3000,
+          "picture": "./Nigiri Sake.png",
+          "categories": [
+            "entrada",
+            "plato frío"
+          ],
+          "ingredients": [
+            "salmón",
+            "arroz"
+          ],
+          "tags": [
+            "sin gluten"
+          ]
+        },
+        {
+          "name": "Sashimi Salmón",
+          "description": "8 cortes de salmón fresco.",
+          "price": 7000,
+          "picture": "./Sashimi Salmon.png",
+          "categories": [
+            "entrada",
+            "plato frío"
+          ],
+          "ingredients": [
+            "salmón"
+          ],
+          "tags": [
+            "sin gluten"
+          ]
+        },
+        {
+          "name": "Sashimi Atún",
+          "description": "8 cortes de atún fresco.",
+          "price": 7000,
+          "picture": "./Sashimi Atun.png",
+          "categories": [
+            "entrada",
+            "plato frío"
+          ],
+          "ingredients": [
+            "atún"
+          ],
+          "tags": [
+            "sin gluten"
+          ]
+        },
+        {
+          "name": "California Ebi Furay",
+          "description": "Roll de camarón apanado, palta y queso crema envuelto en sésamo.",
+          "price": 6000,
+          "picture": "./California Ebi Furay.png",
+          "categories": [
+            "rolls",
+            "rolls fríos",
+            "california"
+          ],
+          "ingredients": [
+            "camarón",
+            "palta",
+            "queso crema"
+          ],
+          "tags": [
+            "camarón"
+          ]
+        },
+        {
+          "name": "California Sake",
+          "description": "Roll de salmón, palta y queso crema envuelto en sésamo.",
+          "price": 6000,
+          "picture": "./California Sake.png",
+          "categories": [
+            "rolls",
+            "rolls fríos",
+            "california"
+          ],
+          "ingredients": [
+            "salmón",
+            "palta",
+            "queso crema",
+            "sésamo"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Avocado Furay",
+          "description": "Roll de pollo apanado y queso crema envuelto en palta.",
+          "price": 6000,
+          "picture": "./Avocado Furay.png",
+          "categories": [
+            "rolls",
+            "rolls fríos",
+            "palta"
+          ],
+          "ingredients": [
+            "pollo apanado",
+            "queso crema",
+            "palta"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Avocado Ebi Sake",
+          "description": "Roll de salmón, camarón y queso crema envuelto en palta.",
+          "price": 6000,
+          "picture": "./Avocado Ebi Sake.png",
+          "categories": [
+            "rolls",
+            "rolls fríos",
+            "palta"
+          ],
+          "ingredients": [
+            "salmón",
+            "camarón",
+            "queso crema",
+            "palta"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Ebi Tempura",
+          "description": "Roll de camarón, cebollín y queso crema envuelto en tempura.",
+          "price": 6000,
+          "picture": "./Ebi Tempura.png",
+          "categories": [
+            "rolls",
+            "rolls calientes",
+            "tempura"
+          ],
+          "ingredients": [
+            "camarón",
+            "cebollín",
+            "queso crema",
+            "tempura"
+          ],
+          "tags": [
+            "camarón"
+          ]
+        },
+        {
+          "name": "Sake Tempura",
+          "description": "Roll de salmón, palta y ciboulette envuelto en tempura.",
+          "price": 6000,
+          "picture": "./Sake Tempura.png",
+          "categories": [
+            "rolls",
+            "rolls calientes",
+            "tempura"
+          ],
+          "ingredients": [
+            "salmón",
+            "palta",
+            "ciboulette",
+            "tempura"
+          ],
+          "tags": []
+        },
+        {
+          "name": "Helado",
+          "description": "Helado de 3 sabores a elección.",
+          "price": 3000,
+          "picture": "./Helado.png",
+          "categories": [
+            "postres"
+          ],
+          "ingredients": [
+            "azúcar"
+          ],
+          "tags": [
+            "vegano",
+            "sin lactosa",
+            "sin gluten"
+          ]
+        },
+        {
+          "name": "Brownie",
+          "description": "Bizcocho de chocolate con nueces.",
+          "price": 2000,
+          "picture": "./Brownie.png",
+          "categories": [
+            "postres"
+          ],
+          "ingredients": [
+            "azúcar"
+          ],
+          "tags": [
+            "vegano",
+            "sin lactosa"
+          ]
+        }
+      ]
+    }
+  ]
+}
