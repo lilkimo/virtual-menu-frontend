@@ -11,26 +11,43 @@ const data = ref(menu.restaurants[0]); //api.get(`/${route.params.id}`))
 
 <template>
   <div>
-    <h1 class="text-center">{{ data.name }}</h1>
-    <h2>Sushi-Delivery</h2>
-  </div>
+    <div class="grid h-24 grid-cols-2 bg-[#A73121]">
+      <div>
+        <img src="../assets/sushi.png" />
+      </div>
+      <div>
+        <h1 class="text-center text-[#FAF1E4]">{{ data.name }}</h1>
+        <h2 class="text-center text-[#FAF1E4]">Sushi-Delivery</h2>
+      </div>
+    </div>
 
-  <div>
-    <h1 class="bg-black bg-clip-text text-transparent selection:bg-transparent">
-      <span v-for="dish in data.menu">
-        <div class="grid grid-cols-12 border">
-          <div class="col-start-1 col-end-4">
-            <h1>Imagen</h1>
-          </div>
-          <div class="col-start-4 col-end-13">
-            <h1>{{ dish.name }}</h1>
-            <h1>{{ dish.description }}</h1>
-            <h1>Precio: ${{ dish.price }}</h1>
-            <h1 v-if="dish.tags.length > 0">{{ dish.tags }}</h1>
-          </div>
+    <div class="bg-[#fcf7f1] p-6">
+      <span
+        v-for="dish in data.menu"
+        class="mb-3 grid grid-cols-12 rounded-lg bg-[#fcf7f1] p-3 drop-shadow-lg"
+      >
+        <img class="col-start-1 col-end-5" src="../assets/Nigiri Sake.png" />
+        <div class="col-start-5 col-end-13 flex flex-col">
+          <span class="text-left text-xl font-bold text-[#862B0D]">
+            {{ dish.name }}
+          </span>
+          <span class="text-left leading-4 text-[#C56545]">
+            {{ dish.description }}
+          </span>
+          <span class="flex flex-row-reverse justify-between">
+            <span class="text-left text-xl font-bold text-[#862B0D]">
+              ${{ dish.price }}
+            </span>
+            <span
+              v-for="tag in dish.tags"
+              class="my-1 place-self-center rounded-full border-2 border-solid border-[#862B0D] px-2 text-xs lowercase leading-3 text-[#862B0D]"
+            >
+              {{ tag }}
+            </span>
+          </span>
         </div>
       </span>
-    </h1>
+    </div>
   </div>
 </template>
 
