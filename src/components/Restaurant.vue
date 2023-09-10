@@ -9,12 +9,12 @@ const route = useRoute();
 const data = ref(menu.restaurants[0]); //api.get(`/${route.params.id}`))
 
 const tags = {
-  'vegano': 'text-[#17ad17] border-[#17ad17] bg-[#eefdee]',
-  'vegetariano': 'text-[#17ad17] border-[#17ad17] bg-[#eefdee]',//['#32cd32', '#c0f0c0'],
-  'camarón': 'text-[#ff8989] border-[#ff8989] bg-[#fdeded]',//['#32cd32', '#c0f0c0'],
-  'sin gluten': 'text-[#f8c52b] border-[#f8c52b] bg-[#fef9e9]',//['#32cd32', '#c0f0c0'],
-  'sin lactosa': 'text-[#6039da] border-[#6039da] bg-[#f2eefc]',//['#32cd32', '#c0f0c0'],
-}
+  vegano: "text-[#17ad17] border-[#17ad17] bg-[#eefdee]",
+  vegetariano: "text-[#17ad17] border-[#17ad17] bg-[#eefdee]", //['#32cd32', '#c0f0c0'],
+  camarón: "text-[#ff8989] border-[#ff8989] bg-[#fdeded]", //['#32cd32', '#c0f0c0'],
+  "sin gluten": "text-[#f8c52b] border-[#f8c52b] bg-[#fef9e9]", //['#32cd32', '#c0f0c0'],
+  "sin lactosa": "text-[#6039da] border-[#6039da] bg-[#f2eefc]", //['#32cd32', '#c0f0c0'],
+};
 </script>
 
 <template>
@@ -39,17 +39,17 @@ const tags = {
           <span class="text-left text-xl font-bold text-text">
             {{ dish.name }}
           </span>
-          <span class="text-left leading-4 text-text h-full">
+          <span class="h-full text-left leading-4 text-text">
             {{ dish.description }}
           </span>
-          <span class="flex flex-row-reverse gap-1 justify-between">
+          <span class="flex flex-row-reverse justify-between gap-1">
             <span class="text-left text-xl font-bold text-text">
               ${{ dish.price }}
             </span>
-            <div class="inline-flex gap-1 overflow-auto">
+            <div class="inline-flex flex-wrap gap-1">
               <span
                 v-for="tag in dish.tags"
-                class="py-[.125rem] place-self-center rounded-full border-2 border-solid px-[.375rem] text-xs leading-3 font-PTSansNarrow uppercase whitespace-nowrap"
+                class="place-self-center whitespace-nowrap rounded-full border-2 border-solid px-[.375rem] py-[.125rem] font-PTSansNarrow text-xs uppercase leading-3"
                 :class="tags[tag]"
               >
                 {{ tag }}
