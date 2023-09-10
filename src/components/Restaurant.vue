@@ -19,13 +19,15 @@ const tags = {
 
 <template>
   <div>
-    <div class="grid h-24 grid-cols-2 bg-[#79f]">
-      <div>
+    <div class="sticky top-0 z-10 grid h-24 grid-cols-2 bg-[#79f]">
+      <div class="flex items-center justify-end">
         <img src="../assets/sushi.png" />
       </div>
-      <div>
-        <h1 class="text-center text-[#FAF1E4]">{{ data.name }}</h1>
-        <h2 class="text-center text-[#FAF1E4]">Sushi-Delivery</h2>
+      <div class="flex items-center">
+        <div>
+          <h1 class="text-center text-[#FAF1E4]">{{ data.name }}</h1>
+          <h2 class="text-center text-[#FAF1E4]">Sushi-Delivery</h2>
+        </div>
       </div>
     </div>
 
