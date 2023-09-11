@@ -8,8 +8,10 @@ export const useCartStore = defineStore('cart', () => {
     if (cart[restaurant] == null)
       cart[restaurant] = []
     const dish = cart[restaurant].find(d => d.id == item)
-    if (dish)
-      dish.quantity++
+    if (dish) {
+      if (dish.quantity < 99)
+        dish.quantity++
+    }
     else
       cart[restaurant].push({
         id: item,

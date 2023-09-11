@@ -55,7 +55,7 @@ const { open, close } = useModal({
       <button
         v-for="dish in data.menu"
         class="mb-2 flex gap-2 rounded-lg bg-background px-4 py-2 drop-shadow-lg w-full"
-        @click="cartStore.push('fukusuke', dish.name)"
+        @click="cartStore.push('fukusuke', dish.id)"
       >
         <div class="flex flex-col gap-1 w-full">
           <div class="flex flex-row-reverse gap-1 justify-between">
@@ -102,15 +102,15 @@ const { open, close } = useModal({
       >
         <div class="h-6 flex flex-col overflow-hidden">
           <div class="text-right infinity-scroll">
-            Pagar ({{ cartStore.count(route.params.id) }} plato{{ cartStore.count(route.params.id) > 1? 's': '' }})
+            Pagar ({{ cartStore.count(route.params.id) }} plato{{ cartStore.count(route.params.id).value > 1? 's': '' }})
             <br />
             Modificar orden
             <br />
-            Pagar ({{ cartStore.count(route.params.id) }} plato{{ cartStore.count(route.params.id) > 1? 's': '' }})
+            Pagar ({{ cartStore.count(route.params.id) }} plato{{ cartStore.count(route.params.id).value > 1? 's': '' }})
           </div>
         </div>
         <span>
-          &nbsp;• CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.name == dish.id).price*dish.quantity, 0)?? 0 }}
+          &nbsp;• CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.id == dish.id).price*dish.quantity, 0)?? 0 }}
         </span>
       </button>
     </footer>

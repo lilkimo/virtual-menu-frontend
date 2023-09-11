@@ -7,7 +7,9 @@ import { ModalsContainer } from 'vue-final-modal'
     <Suspense>
       <router-view />
     </Suspense>
-    <ModalsContainer />
+    <Suspense>
+      <ModalsContainer />
+    </Suspense>
   </div>
 </template>
 
