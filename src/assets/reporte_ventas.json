@@ -1,0 +1,65 @@
+{
+  "name": "Fukusuke",
+  "titulo1": "Reporte de Ventas Mensual",
+  "reporteVentasPeriodo1": {
+    "promedioVentasMensualesTotal": {
+      "title": "Promedio de Ventas Mensuales",
+      "value": 450
+    },
+    "resumenVentasMensualesTotal": {
+      "title": "Resumen de Ventas Mensuales",
+      "value": "$10.925.452"
+    },
+    "porcentajeGananciaPerdidaTotal": {
+      "title": "Porcentaje de Ganancia/Perdida",
+      "value": "5% Ganancia"
+    },
+    "expectativasGananciasProxMesTotal": {
+      "title": "Expectativas de Ganancias Mensual",
+      "value": "$11.001.322"
+    },
+    "indiceComparacionMesAnterior": {
+      "title": "Indice de Comparación Mes Anterior",
+      "value": "$2.000.000"
+    },
+    "alquiler": {
+      "title": "Resumen de Ventas Mes Anterior",
+      "value": "$1.500.000"
+    },
+    "suministros": {
+      "title": "Balance Anual de Ventas",
+      "value": "$25.013.000"
+    }
+  },
+  "titulo2": "Reporte de Ventas Anual",
+  "reporteVentasPeriodo2": {
+    "promedioVentasMensualesTotal": {
+      "title": "Promedio de Ventas Anual",
+      "value": 450
+    },
+    "resumenVentasMensualesTotal": {
+      "title": "Resumen de Ventas Anual",
+      "value": "$10.925.452"
+    },
+    "porcentajeGananciaPerdidaTotal": {
+      "title": "Porcentaje de Ganancia/Perdida",
+      "value": "5% Ganancia"
+    },
+    "expectativasGananciasProxMesTotal": {
+      "title": "Expectativas de Ganancias Anual",
+      "value": "$11.001.322"
+    },
+    "indiceComparacionMesAnterior": {
+      "title": "Indice de Comparación Anual Anterior",
+      "value": "$2.000.000"
+    },
+    "alquiler": {
+      "title": "Resumen de Ventas Anual Anterior",
+      "value": "$1.500.000"
+    },
+    "suministros": {
+      "title": "Balance de Ventas",
+      "value": "$25.013.000"
+    }
+  }
+}
