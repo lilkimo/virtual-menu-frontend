@@ -52,10 +52,10 @@ const createProduct = () => {
 };
 </script>
 <template>
-  <div class="flex h-screen items-center justify-center">
+  <div class="flex h-screen">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div
-        class="h-96 overflow-auto rounded-lg border border-gray-200 shadow-md"
+        class="h-full overflow-auto rounded-lg border border-gray-200 shadow-md"
       >
         <table
           class="w-full border-collapse text-left text-sm text-gray-500"
