@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "name": "makenki",
+      "rol": "admin"
+    },
+    {
+      "name": "safi",
+      "rol": "admin"
+    },
+    {
+      "name": "mikael",
+      "rol": "cliente"
+    },
+    {
+      "name": "marta abla",
+      "rol": "cliente"
+    }
+  ]
+}

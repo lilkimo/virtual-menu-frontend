@@ -20,6 +20,14 @@ const router = createRouter({
   routes
 })
 
+import vue3GoogleLogin from "vue3-google-login";
+const gauthClientId = "40033907361-3pog10j66hpj3pha1pj117tlkd5adn06.apps.googleusercontent.com";
+
 const app = createApp(App)
 app.use(router)
+app.use(vue3GoogleLogin, {
+  clientId: gauthClientId,
+  scope: "email",
+  prompt: "consent",
+});
 app.mount('#app')
