@@ -53,14 +53,12 @@ const createProduct = () => {
 </script>
 <template>
   <div class="flex h-screen items-center justify-center">
-    <div
-      class="relative overflow-x-auto bg-transparent shadow-md sm:rounded-lg"
-    >
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div
-        class="h-96 overflow-hidden overflow-y-auto rounded-lg border border-gray-200 shadow-md"
+        class="h-96 overflow-auto rounded-lg border border-gray-200 shadow-md"
       >
         <table
-          class="w-full border-collapse bg-white text-left text-sm text-gray-500"
+          class="w-full border-collapse text-left text-sm text-gray-500"
         >
           <thead class="bg-gray-50">
             <tr>
@@ -102,14 +100,6 @@ const createProduct = () => {
           </tbody>
         </table>
       </div>
-    </div>
-    <div class="ml-4 mt-4 flex flex-col items-end justify-end">
-      <button
-        class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-        @click="createProduct"
-      >
-        Agregar
-      </button>
     </div>
   </div>
 </template>
