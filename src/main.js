@@ -12,7 +12,7 @@ import MenuAdmin from "./components/MenuAdmin.vue";
 const routes = [
   { path: "/", component: HelloWorld },
   { path: "/restaurant/:id", component: Restaurant },
-  { path: '/order/:id', component: Order },
+  { path: "/order/:id", component: Order },
   { path: "/menu/administrar", component: MenuAdmin },
 ];
 
