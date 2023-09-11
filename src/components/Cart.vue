@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue"
-import { useRoute } from "vue-router";
+import { useRoute } from "vue-router"
 import { useCartStore } from '../stores/cart'
 import { useRestaurantStore } from '../stores/restaurant'
 import { VueFinalModal } from 'vue-final-modal'

@@ -5,7 +5,7 @@ import { useModal } from 'vue-final-modal'
 
 import api from "../api"
 import menu from "../assets/carta.json"
-import Checkout from "./Checkout.vue"
+import Cart from "./Cart.vue"
 import { useCartStore } from '../stores/cart'
 import { useRestaurantStore } from "../stores/restaurant"
 
@@ -25,7 +25,7 @@ const tags = {
 }
 
 const { open, close } = useModal({
-  component: Checkout,
+  component: Cart,
   attrs: {
     onConfirm() {
       close()
