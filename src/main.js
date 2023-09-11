@@ -20,6 +20,18 @@ const router = createRouter({
   routes
 })
 
+import { createPinia } from 'pinia'
+import { PiniaSharedState } from 'pinia-shared-state' // pendiente
+
+const pinia = createPinia()
+
+import { createVfm } from 'vue-final-modal'
+import 'vue-final-modal/style.css'
+
+const vfm = createVfm()
+
 const app = createApp(App)
 app.use(router)
+app.use(pinia)
+app.use(vfm)
 app.mount('#app')
