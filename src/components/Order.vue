@@ -44,10 +44,8 @@ onMounted(() => {
       :key="dish.id"
       class="flex flex-col rounded-lg drop-shadow-lg bg-background p-2 gap-2"
     >
-      <button
-        class="flex"
-      >
-        <div class="w-full text-left">
+      <div class="flex">
+        <div class="text-left w-[calc(100%-3.5rem)]">
           <h2 class="font-medium flex flex-col">
             {{ restaurant.menu.find(d => d.id == dish.id).name }}
             <span class="text-[0.625rem] text-[rgb(56,55,59)]">
@@ -56,7 +54,7 @@ onMounted(() => {
           </h2>
           <p
             v-if="dish.note"
-            class="text-sm text-[rgb(56,55,59)]"
+            class="text-sm text-[rgb(56,55,59)] break-words"
           >
             <b class="font-medium">Instrucciones adicionales</b>: {{ dish.note }}
           </p>
@@ -65,7 +63,7 @@ onMounted(() => {
           class="rounded-lg w-14 h-14"
           src="../assets/suchi.png"
         />
-      </button>
+      </div>
       <span class="flex justify-between font-medium text-lg">
         <span class="font-medium text-lg">
           Cantidad: {{ dish.quantity }}
