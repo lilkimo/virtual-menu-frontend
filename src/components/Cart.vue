@@ -45,14 +45,12 @@ cartStore.$subscribe((_, state) => {
       :key="dish.id"
       class="flex flex-col rounded-lg drop-shadow-lg bg-background p-2 gap-2"
     >
-      <button
-        class="flex"
-      >
+      <button class="flex">
         <div class="w-full text-left">
           <h2 class="font-medium">
             {{ data.menu.find(d => d.id == dish.id).name }}
           </h2>
-              <textarea
+          <textarea
             v-model="dish.note"
             placeholder="Toca para agregar instrucciones adicionales"
             class="outline-none w-full text-sm text-[rgb(56,55,59)]"
