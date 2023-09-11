@@ -8,9 +8,13 @@
   },
   "dependencies": {
     "mande": "^2.0.7",
+    "pinia": "^2.1.6",
+    "pinia-shared-state": "^0.4.5",
+    "qrcode": "^1.5.3",
     "vue": "^3.2.25",
     "vue-router": "^4.2.4",
-    "vue3-google-login": "^2.0.20"
+    "vue3-google-login": "^2.0.20",
+    "vue-final-modal": "^4.4.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
