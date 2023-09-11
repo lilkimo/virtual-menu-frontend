@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "mande": "^2.0.7",
+    "pinia": "^2.1.6",
     "vue": "^3.2.25",
     "vue-router": "^4.2.4"
   },
