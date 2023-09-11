@@ -46,25 +46,18 @@ cartStore.$subscribe((_, state) => {
       class="flex flex-col rounded-lg drop-shadow-lg bg-background p-2 gap-2"
     >
       <button
-        @click="cartStore.addNote(route.params.id, dish, 'SEXO')"
         class="flex"
       >
         <div class="w-full text-left">
           <h2 class="font-medium">
             {{ data.menu.find(d => d.id == dish.id).name }}
           </h2>
-          <p
-            v-if="dish.note"
-            class="text-sm text-[rgb(56,55,59)]"
-          >
-            <b class="font-medium">Instrucciones adicionales</b>: {{ dish.note }}
-          </p>
-          <p
-            v-else
-            class="text-sm text-[rgb(56,55,59)] font-medium"
-          >
-            Toca para agregar instrucciones adicionales
-          </p>
+              <textarea
+            v-model="dish.note"
+            placeholder="Toca para agregar instrucciones adicionales"
+            class="outline-none w-full text-sm text-[rgb(56,55,59)]"
+            @focusout="cartStore.addNote(route.params.id, dish, dish.note)"
+          ></textarea>
         </div>
         <img
           class="rounded-lg w-14 h-14"
