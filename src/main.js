@@ -9,10 +9,12 @@ import {
 
 import HelloWorld from './components/HelloWorld.vue'
 import Restaurant from './components/Restaurant.vue'
+import Order from './components/Order.vue'
 
 const routes = [
   { path: '/', component: HelloWorld },
   { path: '/restaurant/:id', component: Restaurant },
+  { path: '/order/:id', component: Order },
 ]
 
 const router = createRouter({
