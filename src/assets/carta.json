@@ -4,6 +4,7 @@
       "name": "Fukusuke",
       "menu": [
         {
+          "id": "0c373c98-6a27-44ca-a89e-d0837a1e485f",
           "name": "Yakitori",
           "description": "3 brochetas de pollo con salsa teriyaki.",
           "price": 5000,
@@ -20,6 +21,7 @@
           "tags": []
         },
         {
+          "id": "d2ad3e76-cfdf-4d95-a268-d488efd804f1",
           "name": "Gyozas Tori",
           "description": "7 empanadas japonesas rellenas de verduras y pollo cocinadas al vapor.",
           "price": 5000,
@@ -35,6 +37,7 @@
           "tags": []
         },
         {
+          "id": "058753db-ac52-4951-98d1-cc4bf713a2fa",
           "name": "Gyozas Ebi",
           "description": "7 empanadas japonesas rellenas de verduras y camarón cocinadas al vapor.",
           "price": 5000,
@@ -50,6 +53,7 @@
           "tags": []
         },
         {
+          "id": "aa753032-9610-4424-96b6-814f1631d2a8",
           "name": "Gyozas Yasai",
           "description": "7 empanadas japonesas rellenas de verduras cocinadas al vapor.",
           "price": 5000,
@@ -67,6 +71,7 @@
           ]
         },
         {
+          "id": "b0c1a0d6-91ce-45a2-b54e-caca824cfd81",
           "name": "Nigiri Ebi",
           "description": "3 bolitas de arroz cubiertas de camarón.",
           "price": 3000,
@@ -85,6 +90,7 @@
           ]
         },
         {
+          "id": "b0c1a0d6-91ce-45a2-b54e-caca824cfd81",
           "name": "Nigiri Sake",
           "description": "3 bolitas de arroz cubiertas de salmón.",
           "price": 3000,
@@ -102,6 +108,7 @@
           ]
         },
         {
+          "id": "db68d539-4d57-4f61-bef3-af52652773ff",
           "name": "Sashimi Salmón",
           "description": "8 cortes de salmón fresco.",
           "price": 7000,
@@ -118,6 +125,7 @@
           ]
         },
         {
+          "id": "dbc630bb-2008-4500-8e10-cd438048e968",
           "name": "Sashimi Atún",
           "description": "8 cortes de atún fresco.",
           "price": 7000,
@@ -134,6 +142,7 @@
           ]
         },
         {
+          "id": "984f1b98-0446-483f-9c1d-160bcfca069c",
           "name": "California Ebi Furay",
           "description": "Roll de camarón apanado, palta y queso crema envuelto en sésamo.",
           "price": 6000,
@@ -153,6 +162,7 @@
           ]
         },
         {
+          "id": "94288b3e-dd9d-444e-ba4c-f8a129ab2ca6",
           "name": "California Sake",
           "description": "Roll de salmón, palta y queso crema envuelto en sésamo.",
           "price": 6000,
@@ -171,6 +181,7 @@
           "tags": []
         },
         {
+          "id": "6affee86-1a59-43a3-a3f7-aec56001a141",
           "name": "Avocado Furay",
           "description": "Roll de pollo apanado y queso crema envuelto en palta.",
           "price": 6000,
@@ -188,6 +199,7 @@
           "tags": []
         },
         {
+          "id": "2c7fa1da-a875-4079-af4e-38e559cf63e6",
           "name": "Avocado Ebi Sake",
           "description": "Roll de salmón, camarón y queso crema envuelto en palta.",
           "price": 6000,
@@ -206,6 +218,7 @@
           "tags": []
         },
         {
+          "id": "267074d3-caf7-4e49-aaf3-6001fa4600b4",
           "name": "Ebi Tempura",
           "description": "Roll de camarón, cebollín y queso crema envuelto en tempura.",
           "price": 6000,
@@ -226,6 +239,7 @@
           ]
         },
         {
+          "id": "da828492-31cf-4f3e-8234-d2875d9d3e24",
           "name": "Sake Tempura",
           "description": "Roll de salmón, palta y ciboulette envuelto en tempura.",
           "price": 6000,
@@ -244,6 +258,7 @@
           "tags": []
         },
         {
+          "id": "55d28886-4178-41e3-9a3a-6e1d293def84",
           "name": "Helado",
           "description": "Helado de 3 sabores a elección.",
           "price": 3000,
@@ -261,6 +276,7 @@
           ]
         },
         {
+          "id": "82f93757-ca46-4f7b-9fce-8bbccf54c8f8",
           "name": "Brownie",
           "description": "Bizcocho de chocolate con nueces.",
           "price": 2000,

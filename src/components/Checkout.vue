@@ -1,9 +1,15 @@
 <script setup>
-import { ref } from "vue"
+import { ref, onMounted } from "vue"
 import { useRoute } from "vue-router";
 import { useCartStore } from '../stores/cart'
 import { useRestaurantStore } from '../stores/restaurant'
 import { VueFinalModal } from 'vue-final-modal'
+import QRCode from 'qrcode'
+
+import Cross from '../assets/icons/cross.vue'
+import Minus from '../assets/icons/minus.vue'
+import Plus from '../assets/icons/plus.vue'
+import Trash from '../assets/icons/trash.vue'
 
 const route = useRoute();
 const cartStore = useCartStore()
@@ -16,6 +22,13 @@ cartStore.$subscribe((_, state) => {
   if (!state.cart[route.params.id]?.length)
     emit('close')
 })
+
+const qr = await QRCode.toCanvas(`http://localhost:3000/order/${JSON.stringify(cartStore.cart[route.params.id])}`)
+onMounted(() => {
+  document
+    .getElementById('qr-container')
+    .appendChild(qr)
+})
 </script>
 
 <template>
@@ -25,16 +38,14 @@ cartStore.$subscribe((_, state) => {
     content-transition="vfm-slide-down"
     overlay-transition="vfm-fade"
   >
-    <span class="flex justify-between pl-2">
+    <span class="inline-flex items-center justify-between pl-2">
       <h1 class="text-xl font-medium capitalize">
-        {{ route.params.id }}
+        Orden • {{ route.params.id }}
       </h1>
-      <button
-        class="px-2"
+      <Cross
+        class="w-5 h-5"
         @click="emit('close')"
-      >
-        X
-      </button>
+      />
     </span>
     <div
       v-for="dish in cartStore.cart[route.params.id]"
@@ -46,7 +57,9 @@ cartStore.$subscribe((_, state) => {
         class="flex"
       >
         <div class="w-full text-left">
-          <h2 class="font-medium">{{ dish.id }}</h2>
+          <h2 class="font-medium">
+            {{ data.menu.find(d => d.id == dish.id).name }}
+          </h2>
           <p
             v-if="dish.note"
             class="text-sm text-[rgb(56,55,59)]"
@@ -65,43 +78,50 @@ cartStore.$subscribe((_, state) => {
           src="../assets/suchi.png"
         />
       </button>
-      <span class="flex justify-between">
-        <span class="rounded-lg overflow-hidden bg-[#dbdbdb]">
+      <span class="flex justify-between font-medium text-lg">
+        <span class="inline-flex rounded-lg overflow-hidden bg-[#dbdbdb]">
           <button
             @click="cartStore.pop(route.params.id, dish.id)"
             class="px-4"
           >
-            <span v-if="dish.quantity > 1">
-              -
-            </span>
-            <span v-else>
-              b
-            </span>
+            <Minus
+              v-if="dish.quantity > 1"
+              class="h-4 w-4"
+            />
+            <Trash
+              v-else
+              class="h-4 w-4"
+            />
           </button>
-          <span
-            v-text="dish.quantity"
-            class="text-sm font-medium"
-          />
+          <div
+            class="w-6 text-center"
+          >
+            {{ dish.quantity }}
+          </div>
           <button
             @click="cartStore.push(route.params.id, dish.id)"
             class="px-4"
           >
-            +
+            <Plus class="h-4 w-4"/>
           </button>
         </span>
-        <span class="font-medium text-sm text-text">
-          CLP {{ data.menu.find(d => d.name == dish.id).price }}
+        <span class="text-text">
+          CLP {{ data.menu.find(d => d.id == dish.id).price }}
         </span>
       </span>
     </div>
-    <span class="flex justify-between text-text font-medium px-2 text-lg">
+    <span class="flex justify-between text-text font-medium px-2 text-xl">
       <span>
         Total
       </span>
       <span>
-        CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.name == dish.id).price*dish.quantity, 0)?? 0 }}
+        CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.id == dish.id).price*dish.quantity, 0)?? 0 }}
       </span>
     </span>
+    <div
+      id="qr-container"
+      class="flex justify-center"
+    />
     <div class="flex gap-2">
       <button
         class="bg-[#dbdbdb] h-12 w-full rounded-lg drop-shadow-lg text-text justify-center items-center font-medium"
