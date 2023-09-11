@@ -1,17 +1,17 @@
 <script setup>
-import { ref, onMounted } from "vue"
-import { useRoute } from "vue-router"
+import { ref } from "vue"
+import { useRoute, useRouter } from "vue-router"
 import { useCartStore } from '../stores/cart'
 import { useRestaurantStore } from '../stores/restaurant'
 import { VueFinalModal } from 'vue-final-modal'
-import QRCode from 'qrcode'
 
 import Cross from '../assets/icons/cross.vue'
 import Minus from '../assets/icons/minus.vue'
 import Plus from '../assets/icons/plus.vue'
 import Trash from '../assets/icons/trash.vue'
 
-const route = useRoute();
+const router = useRouter()
+const route = useRoute()
 const cartStore = useCartStore()
 const restaurantStore = useRestaurantStore()
 
@@ -21,13 +21,6 @@ const data = ref(restaurantStore.get(route.params.id))
 cartStore.$subscribe((_, state) => {
   if (!state.cart[route.params.id]?.length)
     emit('close')
-})
-
-const qr = await QRCode.toCanvas(`http://localhost:3000/order/${JSON.stringify(cartStore.cart[route.params.id])}`)
-onMounted(() => {
-  document
-    .getElementById('qr-container')
-    .appendChild(qr)
 })
 </script>
 
@@ -118,10 +111,6 @@ onMounted(() => {
         CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.id == dish.id).price*dish.quantity, 0)?? 0 }}
       </span>
     </span>
-    <div
-      id="qr-container"
-      class="flex justify-center"
-    />
     <div class="flex gap-2">
       <button
         class="bg-[#dbdbdb] h-12 w-full rounded-lg drop-shadow-lg text-text justify-center items-center font-medium"
@@ -130,6 +119,10 @@ onMounted(() => {
         Volver al menú
       </button>
       <button
+        @click="() => {
+          console.log(JSON.stringify(cartStore.cart[route.params.id]))
+          router.push(`/order/${JSON.stringify(cartStore.cart[route.params.id])}`)
+        }" 
         class="bg-[#000] h-12 w-full rounded-lg drop-shadow-lg text-[#fff] justify-center items-center font-medium"
       >
         Generar orden

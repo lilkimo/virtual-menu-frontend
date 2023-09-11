@@ -95,7 +95,6 @@ const { open, close } = useModal({
       v-show="cartStore.cart[route.params.id]?.length"
       class="w-full h-16 fixed z-10 bottom-0 p-2 pt-0"
     >
-      <!-- "() => router.push(`/checkout/${route.params.id}`)" -->
       <button
         class="flex bg-[#000] w-full h-full rounded-lg drop-shadow-lg text-[#fff] justify-center items-center font-medium"
         @click="() => open()"
