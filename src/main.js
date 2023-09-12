@@ -11,6 +11,7 @@ import Order from './components/Order.vue'
 import MenuAdmin from "./components/MenuAdmin.vue";
 import Admin from "./components/Admin.vue";
 import Login from "./components/Login.vue";
+import Register from "./components/Register.vue";
 
 const routes = [
   { path: "/", component: HelloWorld },
@@ -20,6 +21,7 @@ const routes = [
   { path: "/reporteventas", component: ReporteVentas },
   { path: "/login", component: Login },
   { path: "/admin", component: Admin },
+  { path: "/register", component: Register },
 ];
 
 const router = createRouter({
