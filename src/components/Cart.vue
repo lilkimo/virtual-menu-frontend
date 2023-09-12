@@ -110,10 +110,7 @@ cartStore.$subscribe((_, state) => {
         Volver al menú
       </button>
       <button
-        @click="() => {
-          console.log(JSON.stringify(cartStore.cart[route.params.id]))
-          router.push(`/order/${JSON.stringify(cartStore.cart[route.params.id])}`)
-        }" 
+        @click="() => router.push(`/order/${JSON.stringify(cartStore.cart[route.params.id])}`)" 
         class="bg-[#000] h-12 w-full rounded-lg drop-shadow-lg text-[#fff] justify-center items-center font-medium"
       >
         Generar orden
