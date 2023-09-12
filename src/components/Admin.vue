@@ -13,7 +13,7 @@ const data = ref(users.users); //api.get(`/${route.params.id}`))
   <span v-for="user in data">
     <div class="mt-4 flex flex-col gap-3">
       <div class="flex flex-row">
-        <div class="flex basis-2/3 flex-row rounded-l-lg bg-green-400">
+        <div class="flex basis-2/3 flex-row rounded-l-lg bg-[#4ade80]">
           <div class="flex basis-2/3 justify-center">{{ user.name }}</div>
           <div
             class="my-1 place-self-center rounded-full border-2 border-solid border-[#000000] px-2 text-xs lowercase leading-3 text-[#000000]"
@@ -21,7 +21,7 @@ const data = ref(users.users); //api.get(`/${route.params.id}`))
             {{ user.rol }}
           </div>
         </div>
-        <div class="flex basis-1/3 flex-row rounded-r-lg bg-red-400">
+        <div class="flex basis-1/3 flex-row rounded-r-lg bg-[#f87171]">
           <div
             class="grid min-w-full grid-flow-col grid-rows-1 justify-items-center"
           >

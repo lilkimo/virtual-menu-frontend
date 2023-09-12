@@ -47,14 +47,14 @@ function saveChanges() {
   <tr :class="{ 'row-editing': isEditing }">
     <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
       <div class="text-sm">
-        <div class="font-medium text-gray-700">
+        <div class="font-medium text-[#374151]">
           <span>{{ props.id }}</span>
         </div>
       </div>
     </th>
     <td class="cell-width-3 px-6 py-4">
       <div class="text-sm">
-        <div class="font-medium text-gray-700">
+        <div class="font-medium text-[#374151]">
           <span v-if="!isEditing">{{ props.nombre }}</span>
           <input
             v-else
