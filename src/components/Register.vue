@@ -1,27 +1,24 @@
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-const router = useRouter();
-const email = ref("");
+import {ref} from 'vue'
+import {useRouter} from 'vue-router'
+const router = useRouter()
+const email = ref('')
 
-import { googleLogout } from "vue3-google-login";
-import { decodeCredential } from "vue3-google-login";
-import App from "../App.vue";
+import {googleLogout} from 'vue3-google-login'
+import {decodeCredential} from 'vue3-google-login'
+import App from '../App.vue'
 
 function handleSignOut() {
   //your logout logics
-  googleLogout();
-  email.value = "User not logged in";
+  googleLogout()
+  email.value = 'User not logged in'
   router.push('/login')
 }
 </script>
 
 <template>
-
   <!-- User Register -->
-  <div
-    class="container ml-auto mr-auto flex items-center justify-center"
-  >
+  <div class="container ml-auto mr-auto flex items-center justify-center">
     <div class="w-full md:w-1/2">
       <form class="mb-4 bg-background px-8 pb-8 pt-6">
         <div class="top-2 mb-4 flex flex-col">

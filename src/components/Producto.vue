@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits, ref } from "vue";
+import {defineProps, defineEmits, ref} from 'vue'
 
 const props = defineProps({
   id: Number,
@@ -7,45 +7,45 @@ const props = defineProps({
   descripcion: String,
   precio: Number,
   stock: Number,
-});
+})
 
-const emit = defineEmits(["deleteProduct", "saveProduct"]);
+const emit = defineEmits(['deleteProduct', 'saveProduct'])
 
-const isEditing = ref(false);
+const isEditing = ref(false)
 
 // Create local data properties for editing
-const editedNombre = ref(props.nombre);
-const editedDescripcion = ref(props.descripcion);
-const editedPrecio = ref(props.precio);
-const editedStock = ref(props.stock);
+const editedNombre = ref(props.nombre)
+const editedDescripcion = ref(props.descripcion)
+const editedPrecio = ref(props.precio)
+const editedStock = ref(props.stock)
 
 function deleteButtonClick() {
-  console.log("Delete button clicked. Emitting event with ID:", props.id);
-  emit("deleteProduct", props.id);
+  console.log('Delete button clicked. Emitting event with ID:', props.id)
+  emit('deleteProduct', props.id)
 }
 
 function editButtonClick() {
-  isEditing.value = !isEditing.value;
+  isEditing.value = !isEditing.value
 }
 
 function saveChanges() {
-  isEditing.value = false;
+  isEditing.value = false
 
   // Emit an event to notify the parent component of the changes
-  emit("saveProduct", {
+  emit('saveProduct', {
     id: props.id,
     nombre: editedNombre.value,
     descripcion: editedDescripcion.value,
     precio: editedPrecio.value,
     stock: editedStock.value,
-  });
+  })
 }
 </script>
 
 <template>
   <!-- ... -->
-  <tr :class="{ 'row-editing': isEditing }">
-    <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+  <tr :class="{'row-editing': isEditing}">
+    <th class="text-gray-900 flex gap-3 px-6 py-4 font-normal">
       <div class="text-sm">
         <div class="font-medium text-[#374151]">
           <span>{{ props.id }}</span>

@@ -1,11 +1,11 @@
 <script setup>
-import { ref } from "vue";
-import { useRoute } from "vue-router";
+import {ref} from 'vue'
+import {useRoute} from 'vue-router'
 
-import users from "../assets/users.json";
+import users from '../assets/users.json'
 
-const route = useRoute();
-const data = ref(users.users); //api.get(`/${route.params.id}`))
+const route = useRoute()
+const data = ref(users.users) //api.get(`/${route.params.id}`))
 </script>
 
 <template>
@@ -22,9 +22,7 @@ const data = ref(users.users); //api.get(`/${route.params.id}`))
           </div>
         </div>
         <div class="flex basis-1/3 flex-row rounded-r-lg bg-[#f87171]">
-          <div
-            class="grid min-w-full grid-flow-col grid-rows-1 justify-items-center"
-          >
+          <div class="grid min-w-full grid-flow-col grid-rows-1 justify-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -1,10 +1,10 @@
 module.exports = {
-  content: ["index.html", "./src/**/*.{js,jsx,ts,tsx,vue,html}"],
+  content: ['index.html', './src/**/*.{js,jsx,ts,tsx,vue,html}'],
   theme: {
     colors: {
-      'background': '#ffffff',
-      'transparent': '#00000000',
-      'text': '#000000',
+      background: '#ffffff',
+      transparent: '#00000000',
+      text: '#000000',
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
@@ -16,4 +16,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

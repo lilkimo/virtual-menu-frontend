@@ -5,9 +5,9 @@
 
 ## Lista de Paths
 
-* /restaurant/fukusuke
-* /menu/administrar
-* /reporteventas
-* /login
-* /admin
-* /register
+- /restaurant/fukusuke
+- /menu/administrar
+- /reporteventas
+- /login
+- /admin
+- /register
