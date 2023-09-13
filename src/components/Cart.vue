@@ -1,27 +1,36 @@
 <script setup>
-import { ref } from "vue"
-import { useRoute, useRouter } from "vue-router"
-import { useCartStore } from '../stores/cart'
-import { useRestaurantStore } from '../stores/restaurant'
-import { VueFinalModal } from 'vue-final-modal'
+import { ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useCartStore } from "../stores/cart";
+import { useRestaurantStore } from "../stores/restaurant";
+import { VueFinalModal } from "vue-final-modal";
 
-import Cross from '../assets/icons/cross.vue'
-import Minus from '../assets/icons/minus.vue'
-import Plus from '../assets/icons/plus.vue'
-import Trash from '../assets/icons/trash.vue'
+import Cross from "../assets/icons/cross.vue";
+import Minus from "../assets/icons/minus.vue";
+import Plus from "../assets/icons/plus.vue";
+import Trash from "../assets/icons/trash.vue";
 
-const router = useRouter()
-const route = useRoute()
-const cartStore = useCartStore()
-const restaurantStore = useRestaurantStore()
+import api from "../api.js";
 
-const emit = defineEmits(['confirm', 'close'])
+const router = useRouter();
+const route = useRoute();
+const cartStore = useCartStore();
+const restaurantStore = useRestaurantStore();
 
-const data = ref(restaurantStore.get(route.params.id))
+const emit = defineEmits(["confirm", "close"]);
+
+const data = ref(restaurantStore.get(route.params.id));
 cartStore.$subscribe((_, state) => {
-  if (!state.cart[route.params.id]?.length)
-    emit('close')
-})
+  if (!state.cart[route.params.id]?.length) emit("close");
+});
+
+async function generateOrder() {
+  const order = {
+    restaurant_id: route.params.id,
+    dishes: cartStore.cart[route.params.id],
+  };
+  return api.post("/order", order);
+}
 </script>
 
 <template>
@@ -35,83 +44,75 @@ cartStore.$subscribe((_, state) => {
       <h1 class="text-xl font-medium capitalize">
         Orden • {{ route.params.id }}
       </h1>
-      <Cross
-        class="w-5 h-5"
-        @click="emit('close')"
-      />
+      <Cross class="h-5 w-5" @click="emit('close')" />
     </span>
     <div
       v-for="dish in cartStore.cart[route.params.id]"
       :key="dish.id"
-      class="flex flex-col rounded-lg drop-shadow-lg bg-background p-2 gap-2"
+      class="flex flex-col gap-2 rounded-lg bg-background p-2 drop-shadow-lg"
     >
       <button class="flex">
         <div class="w-full text-left">
           <h2 class="font-medium">
-            {{ data.menu.find(d => d.id == dish.id).name }}
+            {{ data.menu.find((d) => d.id == dish.id).name }}
           </h2>
           <textarea
             v-model="dish.note"
             placeholder="Toca para agregar instrucciones adicionales"
-            class="outline-none w-full text-sm text-[rgb(56,55,59)]"
+            class="w-full text-sm text-[rgb(56,55,59)] outline-none"
             @focusout="cartStore.addNote(route.params.id, dish, dish.note)"
           ></textarea>
         </div>
-        <img
-          class="rounded-lg w-14 h-14"
-          src="../assets/suchi.png"
-        />
+        <img class="h-14 w-14 rounded-lg" src="../assets/suchi.png" />
       </button>
-      <span class="flex justify-between font-medium text-lg">
-        <span class="inline-flex rounded-lg overflow-hidden bg-[#dbdbdb]">
-          <button
-            @click="cartStore.pop(route.params.id, dish.id)"
-            class="px-4"
-          >
-            <Minus
-              v-if="dish.quantity > 1"
-              class="h-4 w-4"
-            />
-            <Trash
-              v-else
-              class="h-4 w-4"
-            />
+      <span class="flex justify-between text-lg font-medium">
+        <span class="inline-flex overflow-hidden rounded-lg bg-[#dbdbdb]">
+          <button @click="cartStore.pop(route.params.id, dish.id)" class="px-4">
+            <Minus v-if="dish.quantity > 1" class="h-4 w-4" />
+            <Trash v-else class="h-4 w-4" />
           </button>
-          <div
-            class="w-6 text-center"
-          >
+          <div class="w-6 text-center">
             {{ dish.quantity }}
           </div>
           <button
             @click="cartStore.push(route.params.id, dish.id)"
             class="px-4"
           >
-            <Plus class="h-4 w-4"/>
+            <Plus class="h-4 w-4" />
           </button>
         </span>
         <span class="text-text">
-          CLP {{ data.menu.find(d => d.id == dish.id).price }}
+          CLP {{ data.menu.find((d) => d.id == dish.id).price }}
         </span>
       </span>
     </div>
-    <span class="flex justify-between text-text font-medium px-2 text-xl">
+    <span class="flex justify-between px-2 text-xl font-medium text-text">
+      <span> Total </span>
       <span>
-        Total
-      </span>
-      <span>
-        CLP {{ cartStore.cart[route.params.id]?.reduce((count, dish) => count + data.menu.find(d => d.id == dish.id).price*dish.quantity, 0)?? 0 }}
+        CLP
+        {{
+          cartStore.cart[route.params.id]?.reduce(
+            (count, dish) =>
+              count +
+              data.menu.find((d) => d.id == dish.id).price * dish.quantity,
+            0
+          ) ?? 0
+        }}
       </span>
     </span>
     <div class="flex gap-2">
       <button
-        class="bg-[#dbdbdb] h-12 w-full rounded-lg drop-shadow-lg text-text justify-center items-center font-medium"
+        class="h-12 w-full items-center justify-center rounded-lg bg-[#dbdbdb] font-medium text-text drop-shadow-lg"
         @click="emit('close')"
       >
         Volver al menú
       </button>
       <button
-        @click="() => router.push(`/order/${JSON.stringify(cartStore.cart[route.params.id])}`)" 
-        class="bg-[#000] h-12 w-full rounded-lg drop-shadow-lg text-[#fff] justify-center items-center font-medium"
+        @click="
+          () =>
+            generateOrder().then((order) => router.push(`/order/${order.id}`))
+        "
+        class="h-12 w-full items-center justify-center rounded-lg bg-[#000] font-medium text-[#fff] drop-shadow-lg"
       >
         Generar orden
       </button>
@@ -119,5 +120,4 @@ cartStore.$subscribe((_, state) => {
   </VueFinalModal>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

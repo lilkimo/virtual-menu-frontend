@@ -1,92 +1,85 @@
 <script setup>
-import { onMounted, ref } from "vue"
-import { useRoute } from "vue-router"
-import { useRestaurantStore } from '../stores/restaurant'
-import QRCode from 'qrcode'
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+import { useRestaurantStore } from "../stores/restaurant";
+import QRCode from "qrcode";
 
-const route = useRoute()
-const restaurantStore = useRestaurantStore()
-const restaurant = ref(restaurantStore.get("Fukusuke"))
-const data = JSON.parse(route.params.id)
+import api from "../api.js";
 
-const qr = await QRCode.toCanvas(`http://localhost:3000/order/${route.params.id}`)
-onMounted(() => {
-  document
-    .getElementById('qr-container')
-    .appendChild(qr)
-})
+const route = useRoute();
+const restaurantStore = useRestaurantStore();
+
+const restaurant = restaurantStore.get("Fukusuke");
+const data = await api.get(`/order/${route.params.id}`);
+
+const qr = await QRCode.toDataURL(`http://localhost:3000/order/${data.id}`, {
+  margin: 0,
+  width: 250,
+});
 </script>
 
 <template>
   <div class="flex flex-col gap-2 p-2">
-    <h1 class="text-xl font-medium capitalize text-left px-2">
-      Orden • Fukusuke
-    </h1>
-    <div>
-      <div class="text-[0.625rem] text-[rgb(56,55,59)] text-left w-full px-2">
-        orden ca79884e-f793-4f6f-9f8d-71f7f01fa96e,
-        <br />
-        generada el 2023-09-11T19:09:03.192209
-      </div>
-      <div
-        id="qr-container"
-        class="flex justify-center"
-      />
-      <p  class="text-ms leading-5">
-        ¡Listo! tu orden ha sido digitalizada correctamente. Llama a un Mesero y pídele que escanee este código QR.
-      </p>
-    </div>
-    <h2 class="text-left font-medium text-xl px-2">
-      Detalle
+    <h2 class="px-2 text-left text-xl font-medium capitalize">
+      Orden • {{ restaurant.name }}
     </h2>
+    <div class="w-full px-2 text-left text-[0.625rem] text-[rgb(56,55,59)]">
+      Orden {{ data.id }}
+      <br />
+      Generada el {{ data.created_at }}
+    </div>
+    <img :src="qr" class="w-3/4 self-center" />
+    <h2 class="text-xl font-medium">¡Llama a un Mesero!</h2>
+    <p class="leading-5">
+      El restaurante <b class="font-medium">{{ restaurant.name }}</b>
+      <u>aún no ha recibido tu orden</u>. Llama a un Mesero y pídele que escanee
+      este código QR.
+    </p>
+    <h2 class="px-2 text-left text-xl font-medium">Detalle</h2>
     <div
-      v-for="dish in data"
+      v-for="dish in data.dishes"
       :key="dish.id"
-      class="flex flex-col rounded-lg drop-shadow-lg bg-background p-2 gap-2"
+      class="flex flex-col gap-2 rounded-lg bg-background p-2 drop-shadow-lg"
     >
       <div class="flex">
-        <div class="text-left w-[calc(100%-3.5rem)]">
-          <h2 class="font-medium flex flex-col">
-            {{ restaurant.menu.find(d => d.id == dish.id).name }}
-            <span class="text-[0.625rem] text-[rgb(56,55,59)]">
+        <div class="w-[calc(100%-3.5rem)] text-left">
+          <h2 class="flex flex-col font-medium">
+            {{ restaurant.menu.find((d) => d.id == dish.id).name }}
+            <span class="text-[0.625rem] font-normal text-[rgb(56,55,59)]">
               {{ dish.id }}
             </span>
           </h2>
-          <p
-            v-if="dish.note"
-            class="text-sm text-[rgb(56,55,59)] break-words"
-          >
-            <b class="font-medium">Instrucciones adicionales</b>: {{ dish.note }}
+          <p v-if="dish.note" class="break-words text-sm text-[rgb(56,55,59)]">
+            <b class="font-medium">Instrucciones adicionales</b>:
+            {{ dish.note }}
           </p>
         </div>
-        <img
-          class="rounded-lg w-14 h-14"
-          src="../assets/suchi.png"
-        />
+        <img class="h-14 w-14 rounded-lg" src="../assets/suchi.png" />
       </div>
-      <span class="flex justify-between font-medium text-lg">
-        <span class="font-medium text-lg">
-          Cantidad: {{ dish.quantity }}
-        </span>
+      <span class="flex justify-between text-lg">
+        <span class="text-lg font-medium"> Cantidad: {{ dish.quantity }} </span>
         <span class="text-text">
-          CLP {{ restaurant.menu.find(d => d.id == dish.id).price }}
+          CLP {{ restaurant.menu.find((d) => d.id == dish.id).price }}
         </span>
       </span>
     </div>
-    <span class="flex justify-between text-text font-medium px-2 text-xl">
+    <span class="flex justify-between px-2 text-xl font-medium text-text">
+      <span> Total </span>
       <span>
-        Total
-      </span>
-      <span>
-        CLP {{ data.reduce((count, dish) => count + restaurant.menu.find(d => d.id == dish.id).price*dish.quantity, 0)?? 0 }}
+        CLP
+        {{
+          data.dishes.reduce(
+            (count, dish) =>
+              count +
+              restaurant.menu.find((d) => d.id == dish.id).price *
+                dish.quantity,
+            0
+          ) ?? 0
+        }}
       </span>
     </span>
-    <div class="text-sm">
-      © 2023 Makenki Tanaki, Inc.
-    </div>
+    <div class="text-sm">© 2023 Makenki Tanaki, Inc.</div>
   </div>
 </template>
 
-
-<style scoped>
-</style>
+<style scoped></style>
