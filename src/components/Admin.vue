@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from 'vue'
+
 import {useRoute} from 'vue-router'
 
 import users from '../assets/users.json'

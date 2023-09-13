@@ -1,16 +1,16 @@
 <script setup>
 import {ref} from 'vue'
-import {useRoute, useRouter} from 'vue-router'
-import {useCartStore} from '../stores/cart'
-import {useRestaurantStore} from '../stores/restaurant'
-import {VueFinalModal} from 'vue-final-modal'
 
+import {VueFinalModal} from 'vue-final-modal'
+import {useRoute, useRouter} from 'vue-router'
+
+import api from '../api.js'
 import Cross from '../assets/icons/cross.vue'
 import Minus from '../assets/icons/minus.vue'
 import Plus from '../assets/icons/plus.vue'
 import Trash from '../assets/icons/trash.vue'
-
-import api from '../api.js'
+import {useCartStore} from '../stores/cart'
+import {useRestaurantStore} from '../stores/restaurant'
 
 const router = useRouter()
 const route = useRoute()

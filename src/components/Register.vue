@@ -1,12 +1,14 @@
 <script setup>
 import {ref} from 'vue'
-import {useRouter} from 'vue-router'
-const router = useRouter()
-const email = ref('')
 
 import {googleLogout} from 'vue3-google-login'
 import {decodeCredential} from 'vue3-google-login'
+import {useRouter} from 'vue-router'
+
 import App from '../App.vue'
+
+const router = useRouter()
+const email = ref('')
 
 function handleSignOut() {
   //your logout logics

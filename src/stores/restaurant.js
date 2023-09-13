@@ -1,4 +1,5 @@
 import {computed} from 'vue'
+
 import {defineStore} from 'pinia'
 
 import menu from '../assets/carta.json'

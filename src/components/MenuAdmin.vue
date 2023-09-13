@@ -1,8 +1,10 @@
 <script setup>
 import {ref} from 'vue'
+
 import {useRoute} from 'vue-router'
-import Producto from '/src/components/Producto.vue'
+
 import originalJsonData from '/src/assets/carta.json'
+import Producto from '/src/components/Producto.vue'
 
 const jsonData = ref(originalJsonData)
 const route = useRoute()

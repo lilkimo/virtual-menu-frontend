@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from 'vue'
+
 import {useRoute} from 'vue-router'
 
 import api from '../api'
@@ -57,9 +58,7 @@ const data = ref(menu.restaurants[0]) //api.get(`/${route.params.id}`))
           </td>
         </tr>
       </table>
-      <h1 style="vertical-align: bottom; font-size: 90%; color: rgb(34, 34, 34); text-align: left">
-        Cantidad: 1
-      </h1>
+      <h1 style="vertical-align: bottom; font-size: 90%; color: rgb(34, 34, 34); text-align: left">Cantidad: 1</h1>
     </span>
   </h1>
 </template>

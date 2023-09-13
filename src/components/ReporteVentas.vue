@@ -1,7 +1,10 @@
 <script setup>
-import {ref} from 'vue'
-import {useRoute} from 'vue-router'
 import '../index.css'
+
+import {ref} from 'vue'
+
+import {useRoute} from 'vue-router'
+
 import api from '../api'
 import reporte from '../assets/reporte_ventas.json'
 

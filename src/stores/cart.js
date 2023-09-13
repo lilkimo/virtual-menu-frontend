@@ -1,4 +1,5 @@
-import {reactive, computed} from 'vue'
+import {computed, reactive} from 'vue'
+
 import {defineStore} from 'pinia'
 
 export const useCartStore = defineStore('cart', () => {
@@ -25,9 +26,7 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   const count = restaurant =>
-    computed(() =>
-      cart[restaurant]?.length ? cart[restaurant].reduce((count, d) => count + d.quantity, 0) : 0
-    )
+    computed(() => (cart[restaurant]?.length ? cart[restaurant].reduce((count, d) => count + d.quantity, 0) : 0))
 
   function addNote(restaurant, item, note) {
     const dish = cart[restaurant]?.find(d => d == item)

@@ -1,10 +1,9 @@
 <script setup>
-import {ref} from 'vue'
-import {useRoute} from 'vue-router'
-import {useRestaurantStore} from '../stores/restaurant'
 import QRCode from 'qrcode'
+import {useRoute} from 'vue-router'
 
 import api from '../api.js'
+import {useRestaurantStore} from '../stores/restaurant'
 
 const route = useRoute()
 const restaurantStore = useRestaurantStore()

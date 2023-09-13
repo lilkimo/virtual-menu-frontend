@@ -1,17 +1,22 @@
-import {createApp} from 'vue'
-import App from './App.vue'
 import './index.css'
+import 'vue-final-modal/style.css'
 
+import {createApp} from 'vue'
+
+import {createPinia} from 'pinia'
+import vue3GoogleLogin from 'vue3-google-login'
+import {createVfm} from 'vue-final-modal'
 import {createRouter, createWebHistory} from 'vue-router'
 
-import HelloWorld from './components/HelloWorld.vue'
-import Restaurant from './components/Restaurant.vue'
-import ReporteVentas from './components/ReporteVentas.vue'
-import Order from './components/Order.vue'
-import MenuAdmin from './components/MenuAdmin.vue'
+import App from './App.vue'
 import Admin from './components/Admin.vue'
+import HelloWorld from './components/HelloWorld.vue'
 import Login from './components/Login.vue'
+import MenuAdmin from './components/MenuAdmin.vue'
+import Order from './components/Order.vue'
 import Register from './components/Register.vue'
+import ReporteVentas from './components/ReporteVentas.vue'
+import Restaurant from './components/Restaurant.vue'
 
 const routes = [
   {path: '/', component: HelloWorld},
@@ -29,17 +34,10 @@ const router = createRouter({
   routes,
 })
 
-import {createPinia} from 'pinia'
-import {PiniaSharedState} from 'pinia-shared-state' // pendiente
-
 const pinia = createPinia()
-
-import {createVfm} from 'vue-final-modal'
-import 'vue-final-modal/style.css'
 
 const vfm = createVfm()
 
-import vue3GoogleLogin from 'vue3-google-login'
 const gauthClientId = '40033907361-3pog10j66hpj3pha1pj117tlkd5adn06.apps.googleusercontent.com'
 
 const app = createApp(App)

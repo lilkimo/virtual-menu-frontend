@@ -1,20 +1,17 @@
 <script setup>
-import {ref} from 'vue'
-import {useRoute} from 'vue-router'
 import {useModal} from 'vue-final-modal'
+import {useRoute} from 'vue-router'
 
-import api from '../api'
-import menu from '../assets/carta.json'
-import Cart from './Cart.vue'
 import {useCartStore} from '../stores/cart'
 import {useRestaurantStore} from '../stores/restaurant'
+import Cart from './Cart.vue'
 
 const route = useRoute()
 
 const cartStore = useCartStore()
 const restaurantStore = useRestaurantStore()
 
-const data = ref(restaurantStore.get(route.params.id))
+const data = restaurantStore.get(route.params.id)
 
 const tags = {
   vegano: 'text-[#042204] border-[#17ad17] bg-[#b8f6b8]',
