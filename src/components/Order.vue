@@ -32,8 +32,8 @@ const qr = await QRCode.toDataURL(`http://localhost:3000/order/${data.id}`, {
     />
     <h2 class="text-xl font-medium">¡Llama a un Mesero!</h2>
     <p class="leading-5">
-      El restaurante <b class="font-medium">{{ restaurant.name }}</b>
-      <u>aún no ha recibido tu orden</u>. Llama a un Mesero y pídele que escanee este código QR.
+      El restaurante <b class="font-medium">{{ restaurant.name }}</b> <u>aún no ha recibido tu orden</u>. Llama a un
+      Mesero y pídele que escanee este código QR.
     </p>
     <h2 class="px-2 text-left text-xl font-medium">Detalle</h2>
     <div
@@ -73,8 +73,7 @@ const qr = await QRCode.toDataURL(`http://localhost:3000/order/${data.id}`, {
         CLP
         {{
           data.dishes.reduce(
-            (count, dish) =>
-              count + restaurant.menu.find(d => d.id == dish.id).price * dish.quantity,
+            (count, dish) => count + restaurant.menu.find(d => d.id == dish.id).price * dish.quantity,
             0
           ) ?? 0
         }}

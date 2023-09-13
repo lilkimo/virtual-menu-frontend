@@ -40,10 +40,10 @@ async function generateOrder() {
     content-transition="vfm-slide-down"
     overlay-transition="vfm-fade"
   >
-    <span class="inline-flex items-center justify-between pl-2">
+    <span class="inline-flex items-center justify-between px-2">
       <h1 class="text-xl font-medium capitalize">Orden • {{ route.params.id }}</h1>
       <Cross
-        class="h-5 w-5"
+        class="h-4 w-4"
         @click="emit('close')"
       />
     </span>
@@ -77,11 +77,11 @@ async function generateOrder() {
           >
             <Minus
               v-if="dish.quantity > 1"
-              class="h-4 w-4"
+              class="h-3 w-3"
             />
             <Trash
               v-else
-              class="h-4 w-4"
+              class="h-3 w-3"
             />
           </button>
           <div class="w-6 text-center">
@@ -91,10 +91,10 @@ async function generateOrder() {
             @click="cartStore.push(route.params.id, dish.id)"
             class="px-4"
           >
-            <Plus class="h-4 w-4" />
+            <Plus class="h-3 w-3" />
           </button>
         </span>
-        <span class="text-text"> CLP {{ data.menu.find(d => d.id == dish.id).price }} </span>
+        <span class="text-text">CLP {{ data.menu.find(d => d.id == dish.id).price }}</span>
       </span>
     </div>
     <span class="flex justify-between px-2 text-xl font-medium text-text">
@@ -123,6 +123,7 @@ async function generateOrder() {
         Generar orden
       </button>
     </div>
+    <div class="text-center text-sm">© 2023 Makenki Tanaki, Inc.</div>
   </VueFinalModal>
 </template>
 
