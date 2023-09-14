@@ -1,4 +1,4 @@
 import {mande} from 'mande'
 
-const api = mande('http://localhost:6969')
+const api = mande('http://localhost:8000')
 export default api

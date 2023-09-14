@@ -4,13 +4,13 @@ import {ref} from 'vue'
 import {VueFinalModal} from 'vue-final-modal'
 import {useRoute, useRouter} from 'vue-router'
 
-import api from '../api.js'
-import Cross from '../assets/icons/cross.vue'
-import Minus from '../assets/icons/minus.vue'
-import Plus from '../assets/icons/plus.vue'
-import Trash from '../assets/icons/trash.vue'
-import {useCartStore} from '../stores/cart'
-import {useRestaurantStore} from '../stores/restaurant'
+import api from '@/api.js'
+import Cross from '@/assets/icons/cross.vue'
+import Minus from '@/assets/icons/minus.vue'
+import Plus from '@/assets/icons/plus.vue'
+import Trash from '@/assets/icons/trash.vue'
+import {useCartStore} from '@/stores/cart'
+import {useRestaurantStore} from '@/stores/restaurant'
 
 const router = useRouter()
 const route = useRoute()
@@ -19,9 +19,12 @@ const restaurantStore = useRestaurantStore()
 
 const emit = defineEmits(['confirm', 'close'])
 
-const data = ref(restaurantStore.get(route.params.id))
+const restaurant = await restaurantStore.get(route.params.id)
+console.log(restaurant)
 cartStore.$subscribe((_, state) => {
-  if (!state.cart[route.params.id]?.length) emit('close')
+  if (!state.cart[route.params.id]?.length) {
+    emit('close')
+  }
 })
 
 async function generateOrder() {
@@ -35,32 +38,33 @@ async function generateOrder() {
 
 <template>
   <VueFinalModal
-    content-class="absolute bottom-0 w-full p-2 bg-background rounded-lg flex flex-col gap-2 max-h-[90vh] overflow-auto"
+    content-class="absolute bottom-0 w-full p-2 bg-white rounded-lg flex flex-col gap-2 max-h-[90vh] overflow-auto"
     swipe-to-close="none"
     content-transition="vfm-slide-down"
     overlay-transition="vfm-fade"
   >
     <span class="inline-flex items-center justify-between px-2">
-      <h1 class="text-xl font-medium capitalize">Orden • {{ route.params.id }}</h1>
+      <h1 class="text-xl font-medium capitalize">Pedido • {{ route.params.id }}</h1>
       <Cross
         class="h-4 w-4"
+        fill="var(--black)"
         @click="emit('close')"
       />
     </span>
     <div
       v-for="dish in cartStore.cart[route.params.id]"
       :key="dish.id"
-      class="flex flex-col gap-2 rounded-lg bg-background p-2 drop-shadow-lg"
+      class="flex flex-col gap-2 rounded-lg bg-white p-2 drop-shadow-lg"
     >
       <button class="flex">
         <div class="w-full text-left">
           <h2 class="font-medium">
-            {{ data.menu.find(d => d.id == dish.id).name }}
+            {{ restaurant.menu.find(d => d.id == dish.id).name }}
           </h2>
           <textarea
             v-model="dish.note"
             placeholder="Toca para agregar instrucciones adicionales"
-            class="w-full text-sm text-[rgb(56,55,59)] outline-none"
+            class="w-full text-sm text-gray outline-none bg-white"
             @focusout="cartStore.addNote(route.params.id, dish, dish.note)"
           />
         </div>
@@ -70,7 +74,7 @@ async function generateOrder() {
         />
       </button>
       <span class="flex justify-between text-lg font-medium">
-        <span class="inline-flex overflow-hidden rounded-lg bg-[#dbdbdb]">
+        <span class="inline-flex overflow-hidden rounded-lg bg-lightgray">
           <button
             @click="cartStore.pop(route.params.id, dish.id)"
             class="px-4"
@@ -78,10 +82,12 @@ async function generateOrder() {
             <Minus
               v-if="dish.quantity > 1"
               class="h-3 w-3"
+              fill="var(--black)"
             />
             <Trash
               v-else
               class="h-3 w-3"
+              fill="var(--black)"
             />
           </button>
           <div class="w-6 text-center">
@@ -91,19 +97,22 @@ async function generateOrder() {
             @click="cartStore.push(route.params.id, dish.id)"
             class="px-4"
           >
-            <Plus class="h-3 w-3" />
+            <Plus
+              class="h-3 w-3"
+              fill="var(--black)"
+            />
           </button>
         </span>
-        <span class="text-text">CLP {{ data.menu.find(d => d.id == dish.id).price }}</span>
+        <span class="text-black">CLP {{ restaurant.menu.find(d => d.id == dish.id).price }}</span>
       </span>
     </div>
-    <span class="flex justify-between px-2 text-xl font-medium text-text">
+    <span class="flex justify-between px-2 text-xl font-medium text-black">
       <span> Total </span>
       <span>
         CLP
         {{
           cartStore.cart[route.params.id]?.reduce(
-            (count, dish) => count + data.menu.find(d => d.id == dish.id).price * dish.quantity,
+            (count, dish) => count + restaurant.menu.find(d => d.id == dish.id).price * dish.quantity,
             0
           ) ?? 0
         }}
@@ -111,7 +120,7 @@ async function generateOrder() {
     </span>
     <div class="flex gap-2">
       <button
-        class="h-12 w-full items-center justify-center rounded-lg bg-[#dbdbdb] font-medium text-text drop-shadow-lg"
+        class="h-12 w-full items-center justify-center rounded-lg bg-lightgray font-medium text-black drop-shadow-lg"
         @click="emit('close')"
       >
         Volver al menú
@@ -120,7 +129,7 @@ async function generateOrder() {
         @click="() => generateOrder().then(order => router.push(`/order/${order.id}`))"
         class="h-12 w-full items-center justify-center rounded-lg bg-[#000] font-medium text-[#fff] drop-shadow-lg"
       >
-        Generar orden
+        Generar pedido
       </button>
     </div>
     <div class="text-center text-sm">© 2023 Makenki Tanaki, Inc.</div>

@@ -2,6 +2,8 @@
   "restaurants": [
     {
       "name": "Fukusuke",
+      "address": "Av. Apoquindo 3072, Las Condes",
+      "categories": ["entradas", "rolls fríos", "rolls calientes", "postres"],
       "menu": [
         {
           "id": "0c373c98-6a27-44ca-a89e-d0837a1e485f",
@@ -9,7 +11,7 @@
           "description": "3 brochetas de pollo con salsa teriyaki.",
           "price": 5000,
           "picture": "./Yakitori.png",
-          "categories": ["entrada", "plato caliente"],
+          "categories": ["entradas", "plato caliente"],
           "ingredients": ["pollo", "salsa teriyaki", "sésamo"],
           "tags": [],
           "stock": 5
@@ -20,7 +22,7 @@
           "description": "7 empanadas japonesas rellenas de verduras y pollo cocinadas al vapor.",
           "price": 5000,
           "picture": "./Gyozas.png",
-          "categories": ["entrada", "plato caliente"],
+          "categories": ["entradas", "plato caliente"],
           "ingredients": ["pollo", "verduras"],
           "tags": [],
           "stock": 7
@@ -31,7 +33,7 @@
           "description": "7 empanadas japonesas rellenas de verduras y camarón cocinadas al vapor.",
           "price": 5000,
           "picture": "./Gyozas.png",
-          "categories": ["entrada", "plato caliente"],
+          "categories": ["entradas", "plato caliente"],
           "ingredients": ["camarón", "verduras"],
           "tags": [],
           "stock": 3
@@ -42,7 +44,7 @@
           "description": "7 empanadas japonesas rellenas de verduras cocinadas al vapor.",
           "price": 5000,
           "picture": "./Gyozas.png",
-          "categories": ["entrada", "plato caliente"],
+          "categories": ["entradas", "plato caliente"],
           "ingredients": ["verduras"],
           "tags": ["vegano", "vegetariano"],
           "stock": 9
@@ -53,7 +55,7 @@
           "description": "3 bolitas de arroz cubiertas de camarón.",
           "price": 3000,
           "picture": "./Nigiri Ebi.png",
-          "categories": ["entrada", "plato frío"],
+          "categories": ["entradas", "plato frío"],
           "ingredients": ["camarón", "arroz"],
           "tags": ["camarón", "sin gluten"],
           "stock": 2
@@ -64,7 +66,7 @@
           "description": "3 bolitas de arroz cubiertas de salmón.",
           "price": 3000,
           "picture": "./Nigiri Sake.png",
-          "categories": ["entrada", "plato frío"],
+          "categories": ["entradas", "plato frío"],
           "ingredients": ["salmón", "arroz"],
           "tags": ["sin gluten"],
           "stock": 8
@@ -75,7 +77,7 @@
           "description": "8 cortes de salmón fresco.",
           "price": 7000,
           "picture": "./Sashimi Salmon.png",
-          "categories": ["entrada", "plato frío"],
+          "categories": ["entradas", "plato frío"],
           "ingredients": ["salmón"],
           "tags": ["sin gluten"],
           "stock": 6
@@ -86,7 +88,7 @@
           "description": "8 cortes de atún fresco.",
           "price": 7000,
           "picture": "./Sashimi Atun.png",
-          "categories": ["entrada", "plato frío"],
+          "categories": ["entradas", "plato frío"],
           "ingredients": ["atún"],
           "tags": ["sin gluten"],
           "stock": 4

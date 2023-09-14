@@ -9,7 +9,9 @@ export const useCartStore = defineStore('cart', () => {
     if (cart[restaurant] == null) cart[restaurant] = []
     const dish = cart[restaurant].find(d => d.id == item)
     if (dish) {
-      if (dish.quantity < 99) dish.quantity++
+      if (dish.quantity < 99) {
+        dish.quantity++
+      }
     } else
       cart[restaurant].push({
         id: item,
@@ -21,8 +23,11 @@ export const useCartStore = defineStore('cart', () => {
     const dish = cart[restaurant]?.find(d => d.id == item)
     if (!dish) return // falta programar el error
 
-    if (dish.quantity == 1) cart[restaurant] = cart[restaurant].filter(d => d !== dish)
-    else dish.quantity--
+    if (dish.quantity == 1) {
+      cart[restaurant] = cart[restaurant].filter(d => d !== dish)
+    } else {
+      dish.quantity--
+    }
   }
 
   const count = restaurant =>

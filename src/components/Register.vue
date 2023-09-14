@@ -22,7 +22,7 @@ function handleSignOut() {
   <!-- User Register -->
   <div class="container ml-auto mr-auto flex items-center justify-center">
     <div class="w-full md:w-1/2">
-      <form class="mb-4 bg-background px-8 pb-8 pt-6">
+      <form class="mb-4 bg-white px-8 pb-8 pt-6">
         <div class="top-2 mb-4 flex flex-col">
           <div class="flex flex-col gap-3">
             <div class="flex flex-col justify-center">
@@ -33,7 +33,7 @@ function handleSignOut() {
                 Run
               </label>
               <input
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="run"
                 type="text"
                 placeholder=""
@@ -49,7 +49,7 @@ function handleSignOut() {
                 Nombre completo
               </label>
               <input
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="nya"
                 type="text"
                 placeholder=""
@@ -65,7 +65,7 @@ function handleSignOut() {
                 Fecha de nacimiento
               </label>
               <input
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="bd"
                 type="date"
                 required
@@ -80,7 +80,7 @@ function handleSignOut() {
                 Sexo
               </label>
               <select
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="sexo"
                 type="text"
                 required
@@ -98,7 +98,7 @@ function handleSignOut() {
                 Telefono
               </label>
               <input
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="tel"
                 type="tel"
                 required
@@ -113,7 +113,7 @@ function handleSignOut() {
                 Direccion
               </label>
               <input
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="direccion"
                 type="text"
                 required
@@ -128,7 +128,7 @@ function handleSignOut() {
                 Region
               </label>
               <select
-                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                 id="nya"
                 type="text"
                 required
@@ -160,7 +160,7 @@ function handleSignOut() {
                   Provincia
                 </label>
                 <select
-                  class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                  class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                   id="nya"
                   type="text"
                   required
@@ -229,7 +229,7 @@ function handleSignOut() {
                   Comuna
                 </label>
                 <select
-                  class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-background focus:outline-none"
+                  class="focus:shadow-outline w-full appearance-none rounded border bg-[#f9fafb] px-3 py-2 leading-tight text-[#374151] shadow focus:bg-white focus:outline-none"
                   id="nya"
                   type="text"
                   required

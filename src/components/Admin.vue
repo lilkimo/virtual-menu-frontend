@@ -17,7 +17,7 @@ const data = ref(users.users) //api.get(`/${route.params.id}`))
         <div class="flex basis-2/3 flex-row rounded-l-lg bg-[#4ade80]">
           <div class="flex basis-2/3 justify-center">{{ user.name }}</div>
           <div
-            class="my-1 place-self-center rounded-full border-2 border-solid border-[#000000] px-2 text-xs lowercase leading-3 text-[#000000]"
+            class="my-1 place-self-center rounded-full border-2 border-solid border-[#000000] px-2 text-xs lowercase leading-3 text-black"
           >
             {{ user.rol }}
           </div>
