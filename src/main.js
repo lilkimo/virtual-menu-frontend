@@ -17,6 +17,7 @@ import Order from './components/Order.vue'
 import Register from './components/Register.vue'
 import ReporteVentas from './components/ReporteVentas.vue'
 import Restaurant from './components/Restaurant.vue'
+import Landing from './components/Landing.vue'
 
 const routes = [
   {path: '/', component: HelloWorld},
@@ -27,6 +28,7 @@ const routes = [
   {path: '/login', component: Login},
   {path: '/admin', component: Admin},
   {path: '/register', component: Register},
+  {path: '/landing', component: Landing},
 ]
 
 const router = createRouter({
