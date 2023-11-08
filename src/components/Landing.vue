@@ -3,67 +3,90 @@ import {ref} from 'vue'
 
 import {useRoute} from 'vue-router'
 
+import Link from '@/assets/icons/link.vue'
+import QRcode from '@/assets/icons/qrcode.vue'
+import Clock from '@/assets/icons/clock.vue'
+import Application from '@/assets/icons/application.vue'
+
 const route = useRoute()
-const loremipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id mauris luctus, consequat metus eu, lacinia justo. Nulla eu libero lacus. Nam a suscipit felis. Duis tempor turpis quis rutrum molestie. Praesent felis elit, dapibus at diam id, placerat sollicitudin mauris. Mauris molestie orci ipsum, eu scelerisque odio bibendum eu. Curabitur ipsum neque, pharetra quis iaculis eu, interdum nec libero. Suspendisse suscipit mi volutpat fringilla porta. Vivamus eget purus lacus. Praesent finibus metus urna, sit amet volutpat nulla lobortis nec. Aliquam id mi vel sapien interdum consequat a ac velit. Integer eu sapien consectetur, gravida dolor et, faucibus eros. Sed blandit luctus sem in sollicitudin. Etiam vel elit turpis. Praesent vehicula volutpat odio, at ultricies nisl vulputate interdum."
 </script>
 
 <template>
-  <header class="w-full min-h-screen flex flex-col justify-between bg-[#F1FAFE]">
-    <nav class="h-20 flex items-center bg-[#4682A9] font-bold justify-between">
+  <header class="w-full min-h-screen flex flex-col justify-between">
+    <nav class="w-full h-20 flex items-center bg-[#4889F8] font-bold justify-between z-10 absolute">
       <div class="flex flex-row items-center">
         <img class="h-18 w-18 mx-3 rounded-lg" src="../assets/sushi.png"/>
         <h1 class="text-white text-3xl">Carta Virtual</h1>
       </div>
-      <h1 class="text-white text-lg">Beneficios Precios Regístrate</h1>
-    </nav>
-    <div class="flex flex-row justify-evenly flex-wrap">
-      <h1 class="self-center text-3xl text-[#EC693C] text-left font-semibold">
-        Simplifica
-        <span class="self-center text-3xl text-[#4682A9] font-semibold text-left"> tu<br/>negocio de comida rápida<br/><br/>... con nuestra </span>
-        <span class="self-center text-3xl text-[#EC693C] font-semibold text-left">aplicación 😎</span>
-      </h1>
-      <img
-        class="rounded-lg mt-6 md:max-w-xs lg:max-w-xl self-center"
-        src="../assets/pexels-on-shot-2788792.jpg"
-      />
-    </div>
-    <div class="flex flex-col pb-12">
-      <div class="bg-[#EC693C] rounded-full mt-5 min-w-min self-center p-2">
-        <h1 class="text-white text-lg text-center">Más información</h1>
+      <div class="flex flex-row gap-5 mr-5">
+        <h1 class="text-white text-lg self-center">Inicia sesión</h1>
+        <div class="border-0 rounded-lg px-2 py-1 bg-[#EC693C]">
+          <h1 class="text-white text-lg">Regístrate</h1>
+        </div>
       </div>
+    </nav>
+
+    <div class="flex flex-row flex-wrap justify-evenly flex-auto">
+      <div class="flex flex-col z-10 justify-center">
+        <h1 class="self-center text-center">
+          <span class="self-center text-4xl text-[rgb(246,247,248)] font-semibold text-left underline underline-offset-4 decoration-[#EC693C]">Simplifica</span>
+          <span class="self-center text-4xl text-[#F6F7F8] font-semibold text-left"> tu negocio<br/><br/>... con nuestra </span>
+          <span class="self-center text-4xl text-[#EC693C] font-semibold text-left">aplicación 😎</span>
+        </h1>
+        <div class="flex flex-col">
+          <div class="bg-[#EC693C] rounded-full min-w-min self-center p-2 mt-20">
+            <h1 class="text-white text-lg text-center">Más información</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flex z-10 justify-center">
+        <img
+          class="self-center z-10 absolute h-2/3"
+          src="../assets/phone-1.png"
+        />
+      </div>
+      <img
+        class="self-center z-0 absolute w-full h-full"
+        src="../assets/landing banner.jpg"
+      />
     </div>
   </header>
 
-  <div class="bg-[#91C8E4] p-5">
-    <h1 class="text-4xl text-white font-semibold text-center mb-4">Beneficios</h1>
-    <h2 class="text-white text-center">Conecta con tus clientes de una manera innovadora</h2>
-    <div>
-      <div class="flex flex-row p-2">
-        <div class="w-1/2">
-          <img class="h-18 w-18 mx-3 rounded-lg" src="../assets/sushi.png"/>
-        </div>
-        <h2 class="w-1/2 text-white text-2xl font-bold">Carta QR</h2>
+  <div class="bg-[#4889F8] p-8 grid gap-8">
+    <h1 class="text-4xl text-white font-semibold text-center">Funcionalidades</h1>
+    <h2 class="text-white text-xl text-center">¡Descubre los increíbles beneficios de nuestra plataforma única!</h2>
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-col w-1/2 gap-2">
+        <Link class="w-24 self-center"/>
+        <h1 class="text-white text-center font-semibold text-xl">Tu URL Personalizada</h1>
+        <h1 class="text-black text-center px-16">¿Quieres destacar en línea? Obtén tu propia URL y atrae a más clientes.</h1>
       </div>
-      <div class="flex flex-row p-2">
-        <div class="w-1/2">
-          <img class="h-18 w-18 mx-3 rounded-lg" src="../assets/sushi.png"/>
-        </div>
-        <h2 class="w-1/2 text-white text-2xl font-bold">Ahorro de costos</h2>
+      <div class="flex flex-col w-1/2 gap-2">
+        <QRcode class="w-24 h-24 self-center"/>
+        <h1 class="text-white text-center font-semibold text-xl">Carta Virtual Interactiva</h1>
+        <h1 class="text-black text-center px-16">Sorprende a tus clientes con una carta virtual atractiva y fácil de navegar.</h1>
+      </div>
+    </div>
+    <div class="flex flex-row justify-between mb-5">
+      <div class="flex flex-col w-1/2 gap-2">
+        <Clock class="w-24 self-center"/>
+        <h1 class="text-white text-center font-semibold text-xl">Órdenes digitales al instante</h1>
+        <h1 class="text-black text-center px-16">¡Digitaliza tus órdenes de forma rápida y sencilla! Ahorra tiempo y reduce errores.</h1>
+      </div>
+      <div class="flex flex-col w-1/2 gap-2">
+        <Application class="w-24 self-center"/>
+        <h1 class="text-white text-center font-semibold text-xl">Modifica tu carta en tiempo real</h1>
+        <h1 class="text-black text-center px-16">Haz cambios directos en tu carta, sin intermediarios. Más rápido y sencillo que nunca.</h1>
       </div>
     </div>
   </div>
 
-  <div class="bg-[#749BC2] p-5">
-    <h1 class="text-4xl text-white font-semibold text-center">Precios</h1>
-    <h2 class="text-white text-xl flex flex-auto">Planes flexibles para cualquier tipo de negocio</h2>
+  <div class="bg-[#F6F7F8] p-8">
+    <h1 class="text-4xl text-black font-semibold text-center">Precios</h1>
+    <h2 class="text-black text-xl flex flex-auto">Planes flexibles para cualquier tipo de negocio</h2>
   </div>
 
-  <div class="p-5">
-    <h1 class="text-4xl text-[#749BC2] font-semibold text-center">Preguntas frecuentes</h1>
-    <h2 class="text-white text-xl flex flex-auto">Para una experiencia sin complicaciones</h2>
-  </div>
-
-  <div class="bg-[#749BC2] p-5">
+  <div class="bg-[#749BC2] p-8">
     <h1 class="text-4xl text-white font-semibold text-center">Contacto</h1>
     <h2 class="flex flex-auto">Calle falsa 123, Maipú</h2>
     <h2 class="flex flex-auto">+56 9 8888 8888</h2>
