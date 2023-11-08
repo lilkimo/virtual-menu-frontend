@@ -84,10 +84,18 @@ const route = useRoute()
     </div>
   </div>
 
-  <div class="bg-[#EC693C] p-8">
-    <h1 class="text-4xl text-black font-semibold text-center">Precios</h1>
-    <h2 class="text-black text-xl flex flex-auto">Planes flexibles para cualquier tipo de negocio</h2>
-    <h2 class="text-black text-xl flex flex-auto">¡Descubre tu plan ideal aquí!</h2>
+  <div class="bg-gradient-to-r p-8 flex flex-row justify-around from-white to-[#EC693C]">
+    <div class="flex flex-col justify-around items-center">
+      <h1 class="text-4xl text-black font-semibold text-center">Precios</h1>
+      <h2 class="text-black text-xl">Planes flexibles para cualquier tipo de negocio.</h2>
+      <div class="border-0 rounded-lg px-2 py-1 bg-[#4889F8] w-fit">
+        <h2 class="text-white text-lg">¡Descubre tu plan ideal aquí!</h2>
+      </div>
+    </div>
+    <img
+      class="self-center w-1/3 rounded-3xl"
+      src="../assets/demo.png"
+    />
   </div>
 
   <div class="p-8 flex flex-col justify-between">
