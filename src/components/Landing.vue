@@ -7,6 +7,9 @@ import Link from '@/assets/icons/link.vue'
 import QRcode from '@/assets/icons/qrcode.vue'
 import Clock from '@/assets/icons/clock.vue'
 import Application from '@/assets/icons/application.vue'
+import Facebook from '@/assets/social media/facebook.vue'
+import Youtube from '@/assets/social media/youtube.vue'
+import Whatsapp from '@/assets/social media/whatsapp.vue'
 
 const route = useRoute()
 </script>
@@ -81,16 +84,45 @@ const route = useRoute()
     </div>
   </div>
 
-  <div class="bg-[#F6F7F8] p-8">
+  <div class="bg-[#EC693C] p-8">
     <h1 class="text-4xl text-black font-semibold text-center">Precios</h1>
     <h2 class="text-black text-xl flex flex-auto">Planes flexibles para cualquier tipo de negocio</h2>
+    <h2 class="text-black text-xl flex flex-auto">¡Descubre tu plan ideal aquí!</h2>
   </div>
 
-  <div class="bg-[#749BC2] p-8">
-    <h1 class="text-4xl text-white font-semibold text-center">Contacto</h1>
-    <h2 class="flex flex-auto">Calle falsa 123, Maipú</h2>
-    <h2 class="flex flex-auto">+56 9 8888 8888</h2>
-    <h2 class="flex flex-auto">cartavirtual@correo.com</h2>
+  <div class="p-8 flex flex-col justify-between">
+    <div class="w-full h-20 mb-2 flex items-center font-bold justify-between">
+      <div class="flex flex-row items-center">
+        <img class="h-18 w-18 mx-3 rounded-lg" src="../assets/sushi.png"/>
+        <h1 class="text-black text-3xl">Carta Virtual</h1>
+      </div>
+      <div class="flex flex-row gap-5 mr-5">
+        <Facebook class="w-10 h-10 self-center"/>
+        <Youtube class="w-10 h-10 self-center"/>
+        <Whatsapp class="w-10 h-10 self-center"/>
+        
+      </div>
+    </div>
+    <hr class="">
+    <div class="flex flex-row justify-around mt-5">
+      <div>
+        <h1 class="font-thin mb-3 text-sm">Conócenos</h1>
+        <h1 class="text-sm">Sobre nosotros</h1>
+        <h1 class="text-sm">Precios</h1>
+        <h1 class="text-sm">Trabaja con nosotros</h1>
+      </div>
+      <div>
+        <h1 class="font-thin mb-3 text-sm">Atención al cliente</h1>
+        <h1 class="text-sm">Preguntas frecuentes</h1>
+        <h1 class="text-sm">Centro de ayuda</h1>
+      </div>
+      <div>
+        <h1 class="font-thin mb-3 text-sm">Contacto</h1>
+        <h2 class="flex flex-auto text-sm">Calle falsa 123, Maipú</h2>
+        <h2 class="flex flex-auto text-sm">+56 9 8888 8888</h2>
+        <h2 class="flex flex-auto text-sm">cartavirtual@correo.com</h2>
+      </div>
+    </div>
   </div>
 
   <div class="p-2 flex justify-center">
