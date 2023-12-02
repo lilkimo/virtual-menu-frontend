@@ -20,7 +20,7 @@ import Restaurant from './components/Restaurant.vue'
 import Landing from './components/Landing.vue'
 
 const routes = [
-  {path: '/', component: HelloWorld},
+  {path: '/', component: Landing},
   {path: '/restaurant/:id', component: Restaurant},
   {path: '/order/:id', component: Order},
   {path: '/menu/administrar', component: MenuAdmin},
@@ -28,7 +28,6 @@ const routes = [
   {path: '/login', component: Login},
   {path: '/admin', component: Admin},
   {path: '/register', component: Register},
-  {path: '/landing', component: Landing},
 ]
 
 const router = createRouter({

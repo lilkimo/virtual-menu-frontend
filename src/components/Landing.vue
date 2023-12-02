@@ -3,6 +3,7 @@ import {ref} from 'vue'
 
 import {useRoute} from 'vue-router'
 
+import Navbar from '@/components2/navbar.vue'
 import Link from '@/assets/icons/link.vue'
 import QRcode from '@/assets/icons/qrcode.vue'
 import Clock from '@/assets/icons/clock.vue'
@@ -16,18 +17,7 @@ const route = useRoute()
 
 <template>
   <header class="w-full min-h-screen flex flex-col justify-between">
-    <nav class="w-full h-20 flex items-center bg-[#4889F8] font-bold justify-between z-10 absolute">
-      <div class="flex flex-row items-center">
-        <img class="h-18 w-18 mx-3 rounded-lg" src="../assets/sushi.png"/>
-        <h1 class="text-white text-3xl">Carta Virtual</h1>
-      </div>
-      <div class="flex flex-row gap-5 mr-5">
-        <h1 class="text-white text-lg self-center">Inicia sesión</h1>
-        <div class="border-0 rounded-lg px-2 py-1 bg-[#EC693C]">
-          <h1 class="text-white text-lg">Regístrate</h1>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
 
     <div class="flex flex-row flex-wrap justify-evenly flex-auto">
       <div class="flex flex-col z-10 justify-center">

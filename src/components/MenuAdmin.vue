@@ -5,6 +5,7 @@ import {useRoute} from 'vue-router'
 
 import originalJsonData from '/src/assets/carta.json'
 import Producto from '/src/components/Producto.vue'
+import Navbar from '@/components2/navbar.vue'
 
 const jsonData = ref(originalJsonData)
 const route = useRoute()
@@ -49,8 +50,14 @@ const createProduct = () => {
 }
 </script>
 <template>
-  <div class="flex h-screen">
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="flex place-content-center">
+    <Navbar />
+    <div>
+      <div class="mt-24 p-8">
+      <h1 class="text-4xl text-black font-semibold text-center">Administrar productos</h1>
+    </div>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-4">
       <div class="border-gray-200 h-full overflow-auto rounded-lg border shadow-md">
         <table class="text-gray-500 w-full border-collapse text-left text-sm">
           <thead class="bg-[#f9fafb]">
@@ -71,7 +78,7 @@ const createProduct = () => {
                 scope="col"
                 class="text-gray-900 px-6 py-4 font-medium"
               >
-                Descripcion
+                Descripción
               </th>
               <th
                 scope="col"
@@ -114,6 +121,7 @@ const createProduct = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   </div>
 </template>
