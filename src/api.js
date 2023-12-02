@@ -1,4 +1,5 @@
-import { mande } from 'mande'
+import {mande} from 'mande'
 
-const api = mande('http://127.0.0.1:8000/api')
+export const api_url = 'http://localhost:8000'
+const api = mande(api_url)
 export default api

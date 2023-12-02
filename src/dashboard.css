@@ -1,0 +1,47 @@
+article {
+  @apply rounded-lg bg-white shadow;
+}
+
+h2 {
+  @apply px-3 text-lg font-semibold text-black;
+}
+
+img {
+  @apply max-w-none;
+}
+
+article > :deep(*) {
+  @apply px-6 py-4;
+}
+
+label {
+  @apply mb-1 text-sm text-gray;
+}
+
+input {
+  @apply rounded border-0 px-3 py-1.5 outline-none ring-1 ring-inset ring-gray-100 placeholder:font-light placeholder:italic placeholder:text-gray focus:text-black focus:ring-2 focus:ring-black;
+}
+
+button {
+  @apply rounded px-3 py-2 text-sm outline-none;
+}
+
+button:disabled {
+  @apply cursor-not-allowed;
+}
+
+th {
+  @apply text-sm font-normal text-gray;
+}
+
+td {
+  @apply px-3 py-2;
+}
+
+.taglist {
+  @apply flex flex-wrap content-start items-start justify-center gap-1;
+}
+
+.taglist > li {
+  @apply select-none whitespace-nowrap rounded-lg bg-gray-100 px-2 py-1 text-xs font-bold uppercase leading-3;
+}
